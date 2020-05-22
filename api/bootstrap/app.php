@@ -91,6 +91,7 @@ $app->configure('app');
 |
 */
 
+$app->register(Krlove\EloquentModelGenerator\Provider\GeneratorServiceProvider::class);
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
