@@ -1,11 +1,11 @@
 <html>
     <head>
         <title>Burger King</title>
-        <link rel="shortcut icon" href="asset/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="asset/css/bk.css">
-        <link rel="stylesheet" href="asset/css/navbar.css">
-        <script src="vendor/jquery/jquery-3.5.1.min.js"></script>
+        <link rel="shortcut icon" href="<?=asset("asset/favicon.ico");?>" type="image/x-icon">
+        <link rel="stylesheet" href="<?=asset("vendor/bootstrap/css/bootstrap.min.css");?>">
+        <link rel="stylesheet" href="<?=asset("asset/css/bk.css");?>">
+        <link rel="stylesheet" href="<?=asset("asset/css/navbar.css");?>">
+        <script src="<?=asset("vendor/jquery/jquery-3.5.1.min.js");?>"></script>
 
     </head>
     <body>
@@ -178,8 +178,8 @@
                     </div>
                 </section>
         </div>
-        <script src="vendor/popper/popper.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="<?=asset("vendor/popper/popper.js");?>"></script>
+        <script src="<?=asset("vendor/bootstrap/js/bootstrap.min.js");?>"></script>
         @yield('script')
     </body>
 

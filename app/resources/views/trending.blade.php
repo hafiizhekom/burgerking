@@ -13,6 +13,6 @@
 @endsection
 
 @section('script')
-    <script src="asset/js/fetching-home.js"></script>
+    <script src="<?=asset("asset/js/fetching-home.js");?>"></script>
 @endsection
 

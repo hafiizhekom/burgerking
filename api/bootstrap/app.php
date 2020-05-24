@@ -75,7 +75,9 @@ $app->configure('app');
 $app->middleware([App\Http\Middleware\Cors::class]);
 
 $app->routeMiddleware([
-    'cors' => App\Http\Middleware\Cors::class
+    'cors' => App\Http\Middleware\Cors::class,
+    'adminlogin' => App\Http\Middleware\AdminLoginMiddleware::class,
+    'authadmin' => App\Http\Middleware\AuthenticateAdmin::class,
 ]);
 
 /*
@@ -89,10 +91,11 @@ $app->routeMiddleware([
 |
 */
 
+$app->register(App\Providers\AppServiceProvider::class);
+$app->register(App\Providers\AuthServiceProvider::class);
+$app->register(App\Providers\EventServiceProvider::class);
 $app->register(Krlove\EloquentModelGenerator\Provider\GeneratorServiceProvider::class);
-// $app->register(App\Providers\AppServiceProvider::class);
-// $app->register(App\Providers\AuthServiceProvider::class);
-// $app->register(App\Providers\EventServiceProvider::class);
+
 
 /*
 |--------------------------------------------------------------------------

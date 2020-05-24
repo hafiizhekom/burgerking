@@ -26,7 +26,23 @@ $router->get('product/search/{code}', 'ProductController@search');
 
 $router->get('article', 'ArticleController@show');
 $router->get('article/all', 'ArticleController@showAll');
+
 $router->get('category', 'CategoryController@show');
 
-$router->get('user', 'UserController@show');
+
+$router->group(['middleware' => ['authadmin']], function () use ($router) {
+    $router->get('admin', 'AdministratorController@show');
+});
+
+
+$router->post('auth/admin', [
+    'middleware' => 'adminlogin',
+    'uses' => 'AuthController@loginAdmin'
+]);
+
+
+$router->post('category/store', [
+    'middleware' => 'category',
+    'uses' => 'CategoryController@store'
+]);
 

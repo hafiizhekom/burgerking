@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
-use App\User;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
+use Firebase\JWT\JWT;
+use Firebase\JWT\ExpiredException;
+
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -31,9 +33,30 @@ class AuthServiceProvider extends ServiceProvider
         // the User instance via an API token or any other method necessary.
 
         $this->app['auth']->viaRequest('api', function ($request) {
-            if ($request->input('api_token')) {
-                return User::where('api_token', $request->input('api_token'))->first();
+
+            if($request->header('Authorization')) {
+
+                $token = $request->header('Authorization');
+
+                try {
+                    $credentials = JWT::decode($token, env('JWT_SECRET'), ['HS256']);
+                } catch(ExpiredException $e) {
+                    return (object) array('user' => null, 'error'=> 'Provided token is expired.', 'status'=>401);
+                } catch(\Exception $e) {
+                    return (object) array('user' => null, 'error'=> 'An error while decoding token.', 'status'=>400);
+                }
+
+                $dataUser = explode("-", $credentials->sub);
+
+                if(count($dataUser)>3){
+                    $arrayUser = (object) array('id' => $dataUser[0], 'name'=> $dataUser[1], 'email'=> $dataUser[2], 'role'=>$dataUser[3]);
+                }else{
+                    $arrayUser = (object) array('id' => $dataUser[0], 'username'=> $dataUser[1], 'role'=>$dataUser[2]);
+                }
+
+                return (object) array('user' => $arrayUser);
             }
+
         });
     }
 }

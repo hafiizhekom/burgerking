@@ -64,5 +64,5 @@
 
 
 @section('script')
-    <script src="asset/js/search-product.js"></script>
+    <script src="<?=asset("asset/js/search-product.js");?>"></script>
 @endsection
