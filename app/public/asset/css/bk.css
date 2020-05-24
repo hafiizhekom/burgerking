@@ -9,9 +9,6 @@
 }
 
 .navbar{
-    transition-duration: 1s;
-    transform: translateY(45px) scale(0.95);
-    border-radius: 10px;
     background-color:#fff;
 }
 
@@ -129,6 +126,30 @@ h1, h2, h3, h4, h5, h6{
     background:rgb(180, 97, 27);
     border: 2px solid #fff;
     border-radius: 30px;
-    padding:1rem;
     font-weight: bold;
+}
+
+.btn-primary:hover{
+    background:rgb(180, 97, 27);
+    border: 2px solid #fff;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.header .btn-primary{
+    padding:1rem;
+}
+
+
+
+.filter{
+    margin-bottom:20px;
+}
+
+a{
+    color: rgb(180, 97, 27)
+}
+
+.list-group-item{
+    cursor: pointer;
 }

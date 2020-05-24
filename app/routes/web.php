@@ -17,4 +17,15 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/offers', function () {
+    return view('offers');
+});
+
+Route::get('/admin', function () {
+    return view('admin/login');
+});
+
+//Route::get('/admin','AdminController@index');
+
+
 

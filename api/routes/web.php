@@ -16,3 +16,16 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('product', 'ProductController@show');
+$router->get('product/all', 'ProductController@showAll');
+$router->get('product/{code}', 'ProductController@showByCode');
+$router->get('product/category/all', 'ProductController@showAll');
+$router->get('product/category/{code}', 'ProductController@showByCategory');
+$router->get('product/search/{code}', 'ProductController@search');
+
+$router->get('article', 'ArticleController@show');
+$router->get('category', 'CategoryController@show');
+
+$router->get('user', 'UserController@show');
+

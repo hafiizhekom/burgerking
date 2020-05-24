@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-class ExampleController extends Controller
+
+use App\Models\User;
+
+class UserController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -15,7 +18,7 @@ class ExampleController extends Controller
     }
 
     public function show(){
-        $data = User::get();
+        $data = User::where('active','Y')->get();
         return response()->json(['status'=>true, 'data'=>$data]);
     }
 }

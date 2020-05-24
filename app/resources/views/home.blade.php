@@ -4,8 +4,8 @@
         <link rel="shortcut icon" href="asset/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="asset/css/bk.css">
+        <link rel="stylesheet" href="asset/css/navbar-home.css">
         <script src="vendor/jquery/jquery-3.5.1.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div class="main">
@@ -84,72 +84,7 @@
                     <div class="container">
                         <h3 class="text-center mb-5"> OUR OFFERS </h3>
 
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-6 mt-4">
-                                <div class="card" >
-                                    <img class="card-img-top" src="https://cdn.sanity.io/images/czqk28jt/prod_bk/5b90cc9a841921aedda6082928147a8b7b9e3ec2-870x570.png?w=320&fm=webp&q=40&fit=max" alt="Card image cap">
-                                    <div class="card-body">
-                                      <h5 class="card-title">$25 Ultimate Bundle</h5>
-                                      <p class="card-text">2 Whoppers, 2 Double Cheeseburgers, 2 OCS, 2 10pc Chicken Nuggets, 4 Small Fries, 4 Small Drinks, 4 Cookies</p>
-                                      <a href="#" class="btn btn-link">SIGN IN TO REDEEM</a>
-                                    </div>
-                                  </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-4 col-sm-6 mt-4">
-                                <div class="card" >
-                                    <img class="card-img-top" src="https://cdn.sanity.io/images/czqk28jt/prod_bk/5b90cc9a841921aedda6082928147a8b7b9e3ec2-870x570.png?w=320&fm=webp&q=40&fit=max" alt="Card image cap">
-                                    <div class="card-body">
-                                      <h5 class="card-title">$25 Ultimate Bundle</h5>
-                                      <p class="card-text">2 Whoppers, 2 Double Cheeseburgers, 2 OCS, 2 10pc Chicken Nuggets, 4 Small Fries, 4 Small Drinks, 4 Cookies</p>
-                                      <a href="#" class="btn btn-link">SIGN IN TO REDEEM</a>
-                                    </div>
-                                  </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-4 col-sm-6 mt-4">
-                                <div class="card" >
-                                    <img class="card-img-top" src="https://cdn.sanity.io/images/czqk28jt/prod_bk/5b90cc9a841921aedda6082928147a8b7b9e3ec2-870x570.png?w=320&fm=webp&q=40&fit=max" alt="Card image cap">
-                                    <div class="card-body">
-                                      <h5 class="card-title">$25 Ultimate Bundle</h5>
-                                      <p class="card-text">2 Whoppers, 2 Double Cheeseburgers, 2 OCS, 2 10pc Chicken Nuggets, 4 Small Fries, 4 Small Drinks, 4 Cookies</p>
-                                      <a href="#" class="btn btn-link">SIGN IN TO REDEEM</a>
-                                    </div>
-                                  </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-4 col-sm-6 mt-4">
-                                <div class="card" >
-                                    <img class="card-img-top" src="https://cdn.sanity.io/images/czqk28jt/prod_bk/5b90cc9a841921aedda6082928147a8b7b9e3ec2-870x570.png?w=320&fm=webp&q=40&fit=max" alt="Card image cap">
-                                    <div class="card-body">
-                                      <h5 class="card-title">$25 Ultimate Bundle</h5>
-                                      <p class="card-text">2 Whoppers, 2 Double Cheeseburgers, 2 OCS, 2 10pc Chicken Nuggets, 4 Small Fries, 4 Small Drinks, 4 Cookies</p>
-                                      <a href="#" class="btn btn-link">SIGN IN TO REDEEM</a>
-                                    </div>
-                                  </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-4 col-sm-6 mt-4">
-                                <div class="card" >
-                                    <img class="card-img-top" src="https://cdn.sanity.io/images/czqk28jt/prod_bk/5b90cc9a841921aedda6082928147a8b7b9e3ec2-870x570.png?w=320&fm=webp&q=40&fit=max" alt="Card image cap">
-                                    <div class="card-body">
-                                      <h5 class="card-title">$25 Ultimate Bundle</h5>
-                                      <p class="card-text">2 Whoppers, 2 Double Cheeseburgers, 2 OCS, 2 10pc Chicken Nuggets, 4 Small Fries, 4 Small Drinks, 4 Cookies</p>
-                                      <a href="#" class="btn btn-link">SIGN IN TO REDEEM</a>
-                                    </div>
-                                  </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-4 col-sm-6 mt-4">
-                                <div class="card" >
-                                    <img class="card-img-top" src="https://cdn.sanity.io/images/czqk28jt/prod_bk/5b90cc9a841921aedda6082928147a8b7b9e3ec2-870x570.png?w=320&fm=webp&q=40&fit=max" alt="Card image cap">
-                                    <div class="card-body">
-                                      <h5 class="card-title">$25 Ultimate Bundle</h5>
-                                      <p class="card-text">2 Whoppers, 2 Double Cheeseburgers, 2 OCS, 2 10pc Chicken Nuggets, 4 Small Fries, 4 Small Drinks, 4 Cookies</p>
-                                      <a href="#" class="btn btn-link">SIGN IN TO REDEEM</a>
-                                    </div>
-                                  </div>
-                            </div>
+                        <div class="row" id="offers-list">
                         </div>
 
                         <div class="text-center mt-4">
@@ -162,38 +97,7 @@
                     <div class="container">
                         <h3 class="text-center mb-5"> TRENDING </h3>
 
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 col-sm-12 mt-4">
-                                <div class="card">
-                                    <img class="card-img-top" src="https://cdn.sanity.io/images/czqk28jt/prod_bk/e7c19e1ba2c4eadab3bdebfa4fa9ce9419eb4747-920x920.png" alt="Card image cap">
-                                    <div class="card-body">
-                                      <h5 class="card-title">STAYING SAFE IN COVID-19</h5>
-                                      <p class="card-text">Learn about the precautions and measures we're taking to keep our Guests and Team Members safe</p>
-                                    </div>
-                                  </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 col-sm-12 mt-4">
-                                <div class="card">
-                                    <img class="card-img-top" src="https://cdn.sanity.io/images/czqk28jt/prod_bk/e7c19e1ba2c4eadab3bdebfa4fa9ce9419eb4747-920x920.png" alt="Card image cap">
-                                    <div class="card-body">
-                                      <h5 class="card-title">STAYING SAFE IN COVID-19</h5>
-                                      <p class="card-text">Learn about the precautions and measures we're taking to keep our Guests and Team Members safe</p>
-                                    </div>
-                                  </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 col-sm-12 mt-4">
-                                <div class="card">
-                                    <img class="card-img-top" src="https://cdn.sanity.io/images/czqk28jt/prod_bk/e7c19e1ba2c4eadab3bdebfa4fa9ce9419eb4747-920x920.png" alt="Card image cap">
-                                    <div class="card-body">
-                                      <h5 class="card-title">STAYING SAFE IN COVID-19</h5>
-                                      <p class="card-text">Learn about the precautions and measures we're taking to keep our Guests and Team Members safe</p>
-                                    </div>
-                                  </div>
-                            </div>
-
-
+                        <div class="row" id="trending-list">
                         </div>
                     </div>
                 </section>
@@ -307,6 +211,10 @@
                     </div>
                 </section>
         </div>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="asset/js/fetching.js"></script>
+        <script src="asset/js/fetching-product.js"></script>
+        <script src="asset/js/fetching-article.js"></script>
         <script src="asset/js/navbar.js"></script>
     </body>
 

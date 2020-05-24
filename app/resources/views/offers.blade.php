@@ -4,8 +4,9 @@
         <link rel="shortcut icon" href="asset/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="asset/css/bk.css">
+        <link rel="stylesheet" href="asset/css/navbar.css">
         <script src="vendor/jquery/jquery-3.5.1.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
     </head>
     <body>
         <div class="main">
@@ -80,81 +81,62 @@
                     </div>
                 </section>
 
-                <section class="offers pt-5">
+                <section class="offers pt-5 mb-3">
                     <div class="container">
                         <h3 class="text-center mb-5"> OUR OFFERS </h3>
-
                         <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-6 mt-4">
-                                <div class="card" >
-                                    <img class="card-img-top" src="https://cdn.sanity.io/images/czqk28jt/prod_bk/5b90cc9a841921aedda6082928147a8b7b9e3ec2-870x570.png?w=320&fm=webp&q=40&fit=max" alt="Card image cap">
-                                    <div class="card-body">
-                                      <h5 class="card-title">$25 Ultimate Bundle</h5>
-                                      <p class="card-text">2 Whoppers, 2 Double Cheeseburgers, 2 OCS, 2 10pc Chicken Nuggets, 4 Small Fries, 4 Small Drinks, 4 Cookies</p>
-                                      <a href="#" class="btn btn-link">SIGN IN TO REDEEM</a>
+                            <div class="col-lg-3 col-md-3 col-sm-12">
+                                <div class="filter">
+                                    <div class="dropdown">
+                                        <button class="btn btn-primary btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          Sort
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                          <a class="dropdown-item" href="#">Price Lowest</a>
+                                          <a class="dropdown-item" href="#">Price Highest</a>
+                                          <a class="dropdown-item" href="#">A - Z</a>
+                                          <a class="dropdown-item" href="#">Z - A</a>
+                                        </div>
                                     </div>
-                                  </div>
+                                </div>
+
+                                <div class="filter">
+                                    <h4 class="pb-2">Search</h4>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Search" id="search-form" value="">
+                                    </div>
+                                </div>
+
+                                <div class="filter">
+                                    <h4 class="pb-2">Price</h4>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" min="0" placeholder="Harga Terendah" id="lowest-price-form">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" min="0" placeholder="Harga Terendah" id="highest-price-form">
+                                    </div>
+                                    <button class="btn btn-md btn-block btn-primary">Search</button>
+                                </div>
+
+
+
+                                <div class="filter">
+                                    <ul class="list-group" id="category-list">
+                                        <h4 class="pb-2">Category</h4>
+                                    </ul>
+                                </div>
+
+
                             </div>
 
-                            <div class="col-lg-4 col-md-4 col-sm-6 mt-4">
-                                <div class="card" >
-                                    <img class="card-img-top" src="https://cdn.sanity.io/images/czqk28jt/prod_bk/5b90cc9a841921aedda6082928147a8b7b9e3ec2-870x570.png?w=320&fm=webp&q=40&fit=max" alt="Card image cap">
-                                    <div class="card-body">
-                                      <h5 class="card-title">$25 Ultimate Bundle</h5>
-                                      <p class="card-text">2 Whoppers, 2 Double Cheeseburgers, 2 OCS, 2 10pc Chicken Nuggets, 4 Small Fries, 4 Small Drinks, 4 Cookies</p>
-                                      <a href="#" class="btn btn-link">SIGN IN TO REDEEM</a>
-                                    </div>
-                                  </div>
+
+
+                            <div class="col-lg-9 col-md-9 col-sm-12">
+                                <div class="row" id="offers-list">
+
+                                </div>
                             </div>
 
-                            <div class="col-lg-4 col-md-4 col-sm-6 mt-4">
-                                <div class="card" >
-                                    <img class="card-img-top" src="https://cdn.sanity.io/images/czqk28jt/prod_bk/5b90cc9a841921aedda6082928147a8b7b9e3ec2-870x570.png?w=320&fm=webp&q=40&fit=max" alt="Card image cap">
-                                    <div class="card-body">
-                                      <h5 class="card-title">$25 Ultimate Bundle</h5>
-                                      <p class="card-text">2 Whoppers, 2 Double Cheeseburgers, 2 OCS, 2 10pc Chicken Nuggets, 4 Small Fries, 4 Small Drinks, 4 Cookies</p>
-                                      <a href="#" class="btn btn-link">SIGN IN TO REDEEM</a>
-                                    </div>
-                                  </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-4 col-sm-6 mt-4">
-                                <div class="card" >
-                                    <img class="card-img-top" src="https://cdn.sanity.io/images/czqk28jt/prod_bk/5b90cc9a841921aedda6082928147a8b7b9e3ec2-870x570.png?w=320&fm=webp&q=40&fit=max" alt="Card image cap">
-                                    <div class="card-body">
-                                      <h5 class="card-title">$25 Ultimate Bundle</h5>
-                                      <p class="card-text">2 Whoppers, 2 Double Cheeseburgers, 2 OCS, 2 10pc Chicken Nuggets, 4 Small Fries, 4 Small Drinks, 4 Cookies</p>
-                                      <a href="#" class="btn btn-link">SIGN IN TO REDEEM</a>
-                                    </div>
-                                  </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-4 col-sm-6 mt-4">
-                                <div class="card" >
-                                    <img class="card-img-top" src="https://cdn.sanity.io/images/czqk28jt/prod_bk/5b90cc9a841921aedda6082928147a8b7b9e3ec2-870x570.png?w=320&fm=webp&q=40&fit=max" alt="Card image cap">
-                                    <div class="card-body">
-                                      <h5 class="card-title">$25 Ultimate Bundle</h5>
-                                      <p class="card-text">2 Whoppers, 2 Double Cheeseburgers, 2 OCS, 2 10pc Chicken Nuggets, 4 Small Fries, 4 Small Drinks, 4 Cookies</p>
-                                      <a href="#" class="btn btn-link">SIGN IN TO REDEEM</a>
-                                    </div>
-                                  </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-4 col-sm-6 mt-4">
-                                <div class="card" >
-                                    <img class="card-img-top" src="https://cdn.sanity.io/images/czqk28jt/prod_bk/5b90cc9a841921aedda6082928147a8b7b9e3ec2-870x570.png?w=320&fm=webp&q=40&fit=max" alt="Card image cap">
-                                    <div class="card-body">
-                                      <h5 class="card-title">$25 Ultimate Bundle</h5>
-                                      <p class="card-text">2 Whoppers, 2 Double Cheeseburgers, 2 OCS, 2 10pc Chicken Nuggets, 4 Small Fries, 4 Small Drinks, 4 Cookies</p>
-                                      <a href="#" class="btn btn-link">SIGN IN TO REDEEM</a>
-                                    </div>
-                                  </div>
-                            </div>
-                        </div>
-
-                        <div class="text-center mt-4">
-                            <a class="btn btn-md btn-primary" href="#"> VIEW ALL OFFERS </a>
-                        </div>
                     </div>
                 </section>
 
@@ -253,7 +235,9 @@
                     </div>
                 </section>
         </div>
-        <script src="asset/js/navbar.js"></script>
+        <script src="vendor/popper/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="asset/js/fetching-offer.js"></script>
     </body>
 
 </html>
