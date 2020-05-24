@@ -1,7 +1,11 @@
+$( document ).ready(function() {
+    load_article();
+});
+
 function load_article(){
     $.ajax({
         type : 'GET',
-        url : 'http://localhost:5000/article',
+        url : 'http://localhost:5000/article/all',
         success : function(data) {
             $.each( data.data, function( key, value ) {
                 console.log( key + ": " + value['code'] );
@@ -18,3 +22,7 @@ function load_article(){
         }
     });
 }
+
+
+
+

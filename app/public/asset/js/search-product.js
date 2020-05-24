@@ -1,3 +1,4 @@
+var sort="";
 var category = "all";
 var typingTimer;                //timer identifier
 var doneTypingInterval = 2000;  //time in ms, 5 second for example
@@ -9,7 +10,7 @@ var $inputhighestprice = $('#highest-price-form');
 $( document ).ready(function() {
     $("#search-form").prop("disabled", true);
     load_category();
-    search(category);
+    search();
 });
 
 
@@ -47,9 +48,14 @@ function doneTyping () {
     search();
 }
 
+function change_sort(newvalue){
+    sort = newvalue;
+    search();
+}
+
 function change_category(newvalue){
     category = newvalue;
-    search(category);
+    search();
 }
 
 function load_category(){
@@ -65,7 +71,7 @@ function load_category(){
     });
 }
 
-function search(category){
+function search(){
     var keyword = $input.val();
     var lowest_price = $("#lowest-price-form").val();
     var highest_price = $("#highest-price-form").val();
@@ -79,7 +85,8 @@ function search(category){
         data : {
             'keyword' : keyword,
             'lowestprice' : lowest_price,
-            'highestprice' : highest_price
+            'highestprice' : highest_price,
+            'sort' : sort
 
         },
         success : function(data) {

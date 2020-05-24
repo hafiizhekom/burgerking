@@ -1,7 +1,6 @@
 $( document ).ready(function() {
     load_product();
     load_article();
-    load_category();
 });
 
 function load_product(){

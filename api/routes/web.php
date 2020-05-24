@@ -25,6 +25,7 @@ $router->get('product/category/{code}', 'ProductController@showByCategory');
 $router->get('product/search/{code}', 'ProductController@search');
 
 $router->get('article', 'ArticleController@show');
+$router->get('article/all', 'ArticleController@showAll');
 $router->get('category', 'CategoryController@show');
 
 $router->get('user', 'UserController@show');

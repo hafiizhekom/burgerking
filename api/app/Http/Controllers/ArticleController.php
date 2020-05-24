@@ -25,4 +25,13 @@ class ArticleController extends Controller
             return response()->json(['status'=>false, 'message'=>"Can not find data"], 200);
         }
     }
+
+    public function showAll(){
+        $data = Article::where('active','Y')->get();
+        if($data){
+            return response()->json(['status'=>true, 'data'=>$data]);
+        }else{
+            return response()->json(['status'=>false, 'message'=>"Can not find data"], 200);
+        }
+    }
 }

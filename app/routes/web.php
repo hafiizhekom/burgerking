@@ -21,6 +21,11 @@ Route::get('/offers', function () {
     return view('offers');
 });
 
+Route::get('/trending', function () {
+    return view('trending');
+});
+
+
 Route::get('/admin', function () {
     return view('admin/login');
 });

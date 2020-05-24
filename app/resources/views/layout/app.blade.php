@@ -4,8 +4,9 @@
         <link rel="shortcut icon" href="asset/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="asset/css/bk.css">
-        <link rel="stylesheet" href="asset/css/navbar-home.css">
+        <link rel="stylesheet" href="asset/css/navbar.css">
         <script src="vendor/jquery/jquery-3.5.1.min.js"></script>
+
     </head>
     <body>
         <div class="main">
@@ -80,43 +81,9 @@
                     </div>
                 </section>
 
-                <section class="offers pt-5">
-                    <div class="container">
-                        <h3 class="text-center mb-5"> OUR OFFERS </h3>
+                @yield('content')
 
-                        <div class="row" id="offers-list">
-                        </div>
 
-                        <div class="text-center mt-4">
-                            <a class="btn btn-md btn-primary" href="#"> VIEW ALL OFFERS </a>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="trending pt-5">
-                    <div class="container">
-                        <h3 class="text-center mb-5"> TRENDING </h3>
-
-                        <div class="row" id="trending-list">
-                        </div>
-                    </div>
-                </section>
-
-                <section class="mobile-apps">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-6 container-mobile-apps-left">
-                                <img src="asset/image/phone.png" class="img-phone">
-                            </div>
-                            <div class="col-6 container-mobile-apps-right my-auto">
-                                <div class="caption-mobile-apps align-middle">
-                                    <h3>SAVE $$$</h3>
-                                    <h1>WITH OFFERS ON DEMAND</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
 
                 <section class="footer p-5">
                     <div class="container-fluid">
@@ -211,9 +178,9 @@
                     </div>
                 </section>
         </div>
+        <script src="vendor/popper/popper.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-        <script src="asset/js/fetching-home.js"></script>
-        <script src="asset/js/navbar.js"></script>
+        @yield('script')
     </body>
 
 </html>
