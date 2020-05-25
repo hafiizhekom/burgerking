@@ -2,8 +2,8 @@
 
     <head>
         <title>Login Admin</title>
-        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-        <script src="vendor/jquery/jquery-3.5.1.min.js"></script>
+        <link rel="stylesheet" href="<?=asset('vendor/bootstrap/css/bootstrap.min.css');?>">
+        <script src="<?=asset('vendor/jquery/jquery-3.5.1.min.js');?>"></script>
     </head>
 
     <body>
@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <script src="asset/js/admin/token.js"></script>
-        <script src="asset/js/admin/login.js"></script>
+        <script src="<?=asset('asset/js/admin/env.js');?>"></script>
+        <script src="<?=asset('asset/js/admin/login.js');?>"></script>
     </body>
 </html>

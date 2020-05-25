@@ -3,9 +3,12 @@ $("#delete-product").submit(function(e) {
 
     e.preventDefault(); // avoid to execute the actual submit of the form.
 
-    var form = $(this);
+
     var formData = new FormData(this);
 
+    $.ajaxSetup({
+        headers: { 'Authorization': localStorage.getItem('token') }
+    });
 
     $.ajax({
            type: "POST",
@@ -16,7 +19,7 @@ $("#delete-product").submit(function(e) {
            success: function(data)
            {
                if(data.status){
-                    $('#product-table').bootstrapTable('refresh');
+                    load_data();
                     alert(data.message);
                     $('#delete-modal').modal('hide')
                }else{

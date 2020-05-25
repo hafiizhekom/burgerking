@@ -16,17 +16,17 @@
 
                     <div class="collapse navbar-collapse nav-left" id="navbarSupportedContent">
                         <ul class="navbar-nav">
-                            <li class="nav-item active">
+                            <li class="nav-item">
                             <a class="nav-link" href="#">ORDER</a>
                             </li>
                             <li class="nav-item">
                             <a class="nav-link" href="#">RESTAURANTS</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" href="#">OFFERS</a>
+                            <a class="nav-link" href="offers">OFFERS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">TRENDING</a>
+                                <a class="nav-link" href="trending">TRENDING</a>
                             </li>
                             <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -63,25 +63,10 @@
                   </nav>
 
 
-                <section class="header">
-                    <div class="container-fluid">
-                        <div class="caption-header pl-4">
-                            <h3>ORDER IN WITH PICKUP OR</h3>
-                            <h1>FREE DELIVERY!</h1>
-                            <br>
-                            <br>
-                            <br>
-                            *On orders $20 or more
-                        </div>
 
-                        <div class="button-header pl-4 mt-5">
-                            <a href="#" class="btn btn-lg btn-primary">ORDER PICKUP</a>
-                            <a href="#" class="btn btn-lg btn-primary">ORDER DELIVERY</a>
-                        </div>
-                    </div>
-                </section>
-
-                @yield('content')
+                <div class="mt-5">
+                    @yield('content')
+                </div>
 
 
 

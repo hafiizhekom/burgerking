@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Administrator;
+use Illuminate\Http\Request;
 
 class AdministratorController extends Controller
 {
@@ -12,9 +13,10 @@ class AdministratorController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Request $request)
     {
         //
+        $this->request = $request;
     }
 
     public function show(){
@@ -24,5 +26,11 @@ class AdministratorController extends Controller
         }else{
             return response()->json(['status'=>false, 'message'=>"Can not find data"], 200);
         }
+    }
+
+    public function showCurrent(){
+        $adminAuth = $this->request->user()->user;
+        $data = Administrator::where('username',$adminAuth->username)->first();
+        return response()->json(['status'=>true, 'data'=>$data]);
     }
 }

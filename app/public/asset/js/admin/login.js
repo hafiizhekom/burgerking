@@ -5,7 +5,7 @@ $("#login-button").click(function(){
 function login(){
     $.ajax({
         type : 'POST',
-        url : 'http://localhost:5000/auth/admin',
+        url : api+'auth/admin',
         data : {
             'username' : $("#username-form").val(),
             'password' : $("#password-form").val(),
@@ -14,6 +14,7 @@ function login(){
         success : function(data) {
             if(data.status){
                 alert(data.message);
+                localStorage.setItem('token', data.token);
                 token = data.token;
                 login = true;
                 window.location.replace("admin/dashboard");

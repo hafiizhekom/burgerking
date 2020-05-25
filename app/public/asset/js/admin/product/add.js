@@ -4,7 +4,7 @@ $("input[name=name]").change(function(){
     var sentence = name.split(" ");
     var code = "";
     $.each( sentence, function( key, value ) {
-        code = code + value.substr(0, 1).toUpperCase();
+        code = code + value.substr(0, 1).toLowerCase();
     });
 
     $("#recommended-code").html("Recommendation: "+code);
@@ -14,8 +14,12 @@ $("#add-product").submit(function(e) {
 
     e.preventDefault(); // avoid to execute the actual submit of the form.
 
-    var form = $(this);
+
     var formData = new FormData(this);
+
+    $.ajaxSetup({
+        headers: { 'Authorization': localStorage.getItem('token') }
+    });
 
 
     $.ajax({
@@ -32,7 +36,7 @@ $("#add-product").submit(function(e) {
                     $("textarea[name=description]").val("");
                     $("input[name=price]").val(0);
                     $("input[name=image]").val("");
-                    $('#product-table').bootstrapTable('refresh');
+                    load_data();
                     alert(data.message);
                }else{
                    alert(data.message);

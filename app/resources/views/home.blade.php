@@ -15,17 +15,17 @@
 
                     <div class="collapse navbar-collapse nav-left" id="navbarSupportedContent">
                         <ul class="navbar-nav">
-                            <li class="nav-item active">
+                            <li class="nav-item">
                             <a class="nav-link" href="#">ORDER</a>
                             </li>
                             <li class="nav-item">
                             <a class="nav-link" href="#">RESTAURANTS</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" href="#">OFFERS</a>
+                            <a class="nav-link" href="offers">OFFERS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">TRENDING</a>
+                                <a class="nav-link" href="trending">TRENDING</a>
                             </li>
                             <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

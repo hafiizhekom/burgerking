@@ -23,6 +23,9 @@ class ProductController extends Controller
 
     public function show(){
         $data = Product::where('active','Y')->limit(6)->get();
+        foreach ($data as $key => $value) {
+            $value->image = url('/upload/product/'.$value->image);
+        }
         if($data){
             return response()->json(['status'=>true, 'data'=>$data]);
         }
@@ -32,6 +35,9 @@ class ProductController extends Controller
 
     public function showAll(){
         $data = Product::where('active','Y')->with('productcategory:id,name,code')->get();
+        foreach ($data as $key => $value) {
+            $value->image = url('/upload/product/'.$value->image);
+        }
         if($data){
             return response()->json(['status'=>true, 'data'=>$data]);
         }
@@ -43,6 +49,9 @@ class ProductController extends Controller
     public function showByCode($code){
 
         $data = Product::where('code',$code)->get();
+        foreach ($data as $key => $value) {
+            $value->image = url('/upload/product/'.$value->image);
+        }
         if($data){
             return response()->json(['status'=>true, 'data'=>$data]);
         }
@@ -54,7 +63,9 @@ class ProductController extends Controller
     public function showByCategory($code){
         $dataCategory = ProductCategory::where('code',$code)->first();
         $data = Product::where('category', $dataCategory['id'])->get();
-
+        foreach ($data as $key => $value) {
+            $value->image = url('/upload/product/'.$value->image);
+        }
         if($data){
             return response()->json(['status'=>true, 'data'=>$data]);
         }
@@ -70,10 +81,10 @@ class ProductController extends Controller
         $sortfilter = explode("-", $sort);
         if($code!="all"){
             $dataCategory = ProductCategory::where('code',$code)->first();
-            $data = Product::where('category', $dataCategory['id']);
+            $data = Product::where('category', $dataCategory['id'])->where('active','Y');
 
         }else{
-            $data = Product::where('id','>', '0' );
+            $data = Product::where('active','Y');
         }
 
         if($lowest_price != "" && $highest_price != ""){
@@ -88,8 +99,12 @@ class ProductController extends Controller
             $data = $data->orderBy($sortfilter[0], $sortfilter[1]);
         }
 
+
         $data = $data->get();
 
+        foreach ($data as $key => $value) {
+            $value->image = url('/upload/product/'.$value->image);
+        }
 
 
         if($data){
@@ -112,7 +127,7 @@ class ProductController extends Controller
         if ($this->request->file('image')->isValid()) {
             $file = $this->request->file('image');
             $extension = $this->request->file('image')->extension();
-            $this->request->file('image')->move('upload', $this->request->code.".".$extension);
+            $this->request->file('image')->move('upload/product', $this->request->code.".".$extension);
 
             $data->image = $this->request->code.".".$extension;
 
@@ -132,7 +147,8 @@ class ProductController extends Controller
                 if ($this->request->file('image')->isValid()) {
                     $file = $this->request->file('image');
                     $extension = $this->request->file('image')->extension();
-                    $this->request->file('image')->move('upload', $product->code.".".$extension);
+                    $this->request->file('image')->move('upload/product', $product->code.".".$extension);
+                    $product->image = $product->code.".".$extension;
                 }
             }
             $product->name = $this->request->name;

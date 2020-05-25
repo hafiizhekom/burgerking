@@ -40,7 +40,7 @@
 
     <div class="table-section mt-5">
         <h5>Data Product</h5>
-        <table id="product-table">
+        <table id="product-table" data-height="460">
             <thead>
                 <tr>
                     <th data-visible="false" data-field="id">ID</th>
@@ -48,7 +48,7 @@
                     <th data-sortable="true" data-field="name">Name</th>
                     <th data-field="description">Description</th>
                     <th data-sortable="true" data-field="price">Price</th>
-                    <th data-field="image">Image</th>
+                    <th data-formatter="imageFormatter">Image</th>
                     <th data-field="productcategory.name">Category</th>
                     <th data-formatter="actionFormatter">Action</th>
                 </tr>
@@ -125,67 +125,10 @@
 
 
 @section('script')
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="<?=asset('asset/js/admin/product/view.js');?>"></script>
     <script src="<?=asset('asset/js/admin/product/add.js');?>"></script>
     <script src="<?=asset('asset/js/admin/product/edit.js');?>"></script>
     <script src="<?=asset('asset/js/admin/product/delete.js');?>"></script>
-    <script>
-        var data = "";
-        $(window).ready(function(){
-            load_category();
-        })
-
-        function load_data(){
-            $.ajax({
-                type : 'GET',
-                url : 'http://localhost:5000/product/all',
-                success : function(data) {
-                    $('#product-table').bootstrapTable({
-                        data: data.data,
-                        pagination: true,
-                        search: true
-                    })
-                }
-            });
-        }
-
-        function load_category(){
-            $.ajax({
-                type : 'GET',
-                url : 'http://localhost:5000/category',
-                success : function(data) {
-                     $.each( data.data, function( key, value ) {
-                        $(".category-list").append("<option value='"+value['id']+"'>"+value['name']+"</option>");
-                    })
-
-                    load_data();
-                }
-            });
-        }
-
-        function modaledit(id, code, name, description, price, category){
-            $("#id-edit").val(id);
-            $("#code-edit").val(code);
-            $("#name-edit").val(name);
-            $("#desc-edit").val(description);
-            $("#price-edit").val(price);
-            $("#category-edit").val(category);
-            $('#edit-modal').modal('show')
-        }
-
-        function modaldelete(id){
-            $("#id-delete").val(id);
-            $('#delete-modal').modal('show')
-        }
-
-
-        function actionFormatter(value, row) {
-            var button = '<button class="btn btn-sm btn-warning m-2" onclick="modaledit(\''+row.id+'\', \''+row.code+'\', \''+row.name+'\', \''+row.description+'\', \''+row.price+'\', \''+row.category+'\')">Edit</button>' +
-                '<button class="btn btn-sm btn-danger" onclick="modaldelete(\''+row.id+'\')">Delete</button>'
-            return button
-        }
-
-
-
-    </script>
 @endsection
 

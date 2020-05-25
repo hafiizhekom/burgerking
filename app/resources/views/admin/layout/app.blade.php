@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
     <head>
@@ -19,7 +20,7 @@
 
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Logout</a>
+                      <a class="nav-link" href="#" id="logout-button">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -46,6 +47,9 @@
             </div>
         </div>
 
+        <script src="<?=asset('asset/js/admin/env.js');?>"></script>
+        <script src="<?=asset('asset/js/admin/check-login.js');?>"></script>
+        <script src="<?=asset('asset/js/admin/logout.js');?>"></script>
         <script src="<?=asset("vendor/popper/popper.js");?>"></script>
         <script src="<?=asset("vendor/bootstrap/js/bootstrap.min.js");?>"></script>
         <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>

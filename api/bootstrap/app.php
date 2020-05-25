@@ -78,9 +78,16 @@ $app->routeMiddleware([
     'cors' => App\Http\Middleware\Cors::class,
     'adminlogin' => App\Http\Middleware\AdminLoginMiddleware::class,
     'authadmin' => App\Http\Middleware\AuthenticateAdmin::class,
+    'delete' => App\Http\Middleware\DeleteMiddleware::class,
     'product' => App\Http\Middleware\ProductMiddleware::class,
     'productchange' => App\Http\Middleware\ProductChangeMiddleware::class,
-    'productdelete' => App\Http\Middleware\ProductDeleteMiddleware::class,
+    'category' => App\Http\Middleware\CategoryMiddleware::class,
+    'categorychange' => App\Http\Middleware\CategoryChangeMiddleware::class,
+    'article' => App\Http\Middleware\ArticleMiddleware::class,
+    'articlechange' => App\Http\Middleware\ArticleChangeMiddleware::class,
+    'store' => App\Http\Middleware\StoreMiddleware::class,
+    'storechange' => App\Http\Middleware\StoreChangeMiddleware::class,
+
 ]);
 
 /*

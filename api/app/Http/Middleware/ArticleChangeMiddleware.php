@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Illuminate\Support\Facades\Validator;
 use Closure;
 
-class ProductDeleteMiddleware
+class ArticleChangeMiddleware
 {
     /**
      * Handle an incoming request.
@@ -18,7 +18,10 @@ class ProductDeleteMiddleware
     {
 
         $validator = Validator::make($request->all(), [
-            'id' => 'required|integer'
+            'id' => 'required|integer',
+            'title' => 'required|string|max:50',
+            'content' => 'required|string',
+            'image'=>'image',
         ]);
 
         if ($validator->fails()) {

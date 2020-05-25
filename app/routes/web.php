@@ -25,6 +25,14 @@ Route::get('/trending', function () {
     return view('trending');
 });
 
+Route::get('/restaurant', function () {
+    return view('restaurant');
+});
+
+Route::get('/signup', function () {
+    return view('signup');
+});
+
 
 Route::get('/admin', function () {
     return view('admin/login');
@@ -37,6 +45,26 @@ Route::get('/admin/dashboard', function () {
 Route::get('/admin/product', function () {
     return view('admin/product');
 });
+
+Route::get('/admin/category', function () {
+    return view('admin/category');
+});
+
+Route::get('/admin/article', function () {
+    return view('admin/article');
+});
+
+Route::get('/admin/article', function () {
+    return view('admin/article');
+});
+
+Route::get('/admin/store', function () {
+    return view('admin/store');
+});
+
+
+
+
 
 
 //Route::get('/admin','AdminController@index');
