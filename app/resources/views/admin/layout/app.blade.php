@@ -44,31 +44,11 @@
                     </div>
                 </div>
             </div>
-        <div>
+        </div>
 
+        <script src="<?=asset("vendor/popper/popper.js");?>"></script>
+        <script src="<?=asset("vendor/bootstrap/js/bootstrap.min.js");?>"></script>
         <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
-        <script>
-            $('#table').bootstrapTable({
-                columns: [{
-                    field: 'id',
-                    title: 'Item ID'
-                }, {
-                    field: 'name',
-                    title: 'Item Name'
-                }, {
-                    field: 'price',
-                    title: 'Item Price'
-                }],
-                data: [{
-                    id: 1,
-                    name: 'Item 1',
-                    price: '$1'
-                }, {
-                    id: 2,
-                    name: 'Item 2',
-                    price: '$2'
-                }]
-            })
-        </script>
+        @yield('script')
     </body>
 </html>

@@ -78,6 +78,9 @@ $app->routeMiddleware([
     'cors' => App\Http\Middleware\Cors::class,
     'adminlogin' => App\Http\Middleware\AdminLoginMiddleware::class,
     'authadmin' => App\Http\Middleware\AuthenticateAdmin::class,
+    'product' => App\Http\Middleware\ProductMiddleware::class,
+    'productchange' => App\Http\Middleware\ProductChangeMiddleware::class,
+    'productdelete' => App\Http\Middleware\ProductDeleteMiddleware::class,
 ]);
 
 /*

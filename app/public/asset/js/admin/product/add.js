@@ -1,0 +1,47 @@
+
+$("input[name=name]").change(function(){
+    var name = $("input[name=name]").val();
+    var sentence = name.split(" ");
+    var code = "";
+    $.each( sentence, function( key, value ) {
+        code = code + value.substr(0, 1).toUpperCase();
+    });
+
+    $("#recommended-code").html("Recommendation: "+code);
+});
+
+$("#add-product").submit(function(e) {
+
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+
+    var form = $(this);
+    var formData = new FormData(this);
+
+
+    $.ajax({
+           type: "POST",
+           url: "http://localhost:5000/product/store",
+           data: formData, // serializes the form's elements.
+           processData: false,
+           contentType: false,
+           success: function(data)
+           {
+               if(data.status){
+                    $("input[name=name]").val("");
+                    $("input[name=code]").val("");
+                    $("textarea[name=description]").val("");
+                    $("input[name=price]").val(0);
+                    $("input[name=image]").val("");
+                    $('#product-table').bootstrapTable('refresh');
+                    alert(data.message);
+               }else{
+                   alert(data.message);
+               }
+           },
+           error: function(xhr, status, error) {
+            alert(xhr.responseText);
+           }
+         });
+
+
+});

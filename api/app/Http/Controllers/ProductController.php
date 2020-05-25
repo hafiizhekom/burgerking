@@ -31,7 +31,7 @@ class ProductController extends Controller
     }
 
     public function showAll(){
-        $data = Product::where('active','Y')->get();
+        $data = Product::where('active','Y')->with('productcategory:id,name,code')->get();
         if($data){
             return response()->json(['status'=>true, 'data'=>$data]);
         }
@@ -97,6 +97,73 @@ class ProductController extends Controller
         }
         return response()->json(['status'=>false, 'message'=>"Can not find data"], 200);
 
+    }
+
+    public function store(){
+
+        $data = new Product;
+        $data->code = $this->request->code;
+        $data->name = $this->request->name;
+        $data->description = $this->request->description;
+        $data->price = $this->request->price;
+        $data->category = $this->request->category;
+
+
+        if ($this->request->file('image')->isValid()) {
+            $file = $this->request->file('image');
+            $extension = $this->request->file('image')->extension();
+            $this->request->file('image')->move('upload', $this->request->code.".".$extension);
+
+            $data->image = $this->request->code.".".$extension;
+
+            if($data->save()){
+                return response()->json(['status'=>true, 'message'=>"Success Add Product",'data'=>['id' => $data->id]], 200);
+            }else{
+                return response()->json(['status'=>false, 'message'=>"Fail Add Product"], 200);
+            }
+        }
+    }
+
+    public function change(){
+        $product = Product::find($this->request->id);
+
+        if($product){
+            if ($this->request->hasFile('image')) {
+                if ($this->request->file('image')->isValid()) {
+                    $file = $this->request->file('image');
+                    $extension = $this->request->file('image')->extension();
+                    $this->request->file('image')->move('upload', $product->code.".".$extension);
+                }
+            }
+            $product->name = $this->request->name;
+            $product->description = $this->request->description;
+            $product->price = $this->request->price;
+            $product->category = $this->request->category;
+
+            if($product->save()){
+                return response()->json(['status'=>true, 'message'=>"Success Update"], 200);
+            }else{
+                return response()->json(['status'=>false, 'message'=>"Fail Update"], 200);
+            }
+        }else{
+            return response()->json(['status'=>false, 'message'=>"Can not find data"], 200);
+        }
+    }
+
+    public function delete(){
+        $product = Product::find($this->request->id);
+
+        if($product){
+
+            $product->active = 'N';
+            if($product->save()){
+                return response()->json(['status'=>true, 'message'=>"Success Delete"], 200);
+            }else{
+                return response()->json(['status'=>false, 'message'=>"Fail Delete"], 200);
+            }
+        }else{
+            return response()->json(['status'=>false, 'message'=>"Can not find data"], 200);
+        }
     }
 
 
