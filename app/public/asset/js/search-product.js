@@ -82,11 +82,11 @@ function search(){
     }
 
     if(lowest_price){
-        datasubmit['lowest_price'] = lowest_price;
+        datasubmit['lowestprice'] = lowest_price;
     }
 
     if(highest_price){
-        datasubmit['highest_price'] = highest_price;
+        datasubmit['highestprice'] = highest_price;
     }
 
     if(sort){

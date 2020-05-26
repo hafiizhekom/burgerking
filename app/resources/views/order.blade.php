@@ -27,7 +27,19 @@
                                 </div>
 
                                 <div class="mt-4">
-                                    <a href="#" class="btn btn-lg btn-primary-reverse w-50 open-modal-order">ORDER</a>
+                                    <form id="restaurant-form">
+                                        <input type="hidden" name="type">
+                                        <input type="hidden" name="location">
+                                        <button type="submit" class="btn btn-lg btn-primary-reverse w-50">ORDER</button>
+                                    </form>
+
+                                    <form id="delivery-form">
+                                        <input type="hidden" name="type">
+                                        <input type="hidden" name="address">
+                                        <input type="hidden" name="phone">
+                                        <input type="hidden" name="note">
+                                        <button type="submit" class="btn btn-lg btn-primary-reverse w-50">ORDER</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

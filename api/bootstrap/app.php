@@ -91,7 +91,7 @@ $app->routeMiddleware([
     'register' => App\Http\Middleware\RegisterMiddleware::class,
     'login' => App\Http\Middleware\LoginMiddleware::class,
     'userchange' => App\Http\Middleware\UserChangeMiddleware::class,
-
+    'order' => App\Http\Middleware\OrderMiddleware::class,
 ]);
 
 /*

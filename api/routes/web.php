@@ -92,6 +92,10 @@ $router->group(['middleware' => ['authadmin']], function () use ($router) {
         'uses' => 'StoreController@delete'
     ]);
 
+    $router->get('order', [
+        'uses' => 'OrderController@show'
+    ]);
+
 
 });
 
@@ -101,6 +105,13 @@ $router->group(['middleware' => ['auth']], function () use ($router) {
         'middleware' => 'userchange',
         'uses' => 'UserController@change'
     ]);
+
+    $router->post('order/store', [
+        'middleware' => 'order',
+        'uses' => 'OrderController@store'
+    ]);
+
+
 });
 
 $router->post('auth/admin', [

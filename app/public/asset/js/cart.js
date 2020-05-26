@@ -52,6 +52,7 @@ function load_cart(){
 }
 
 function delete_cart(code){
+    alert("Delete "+code);
     cart_list = JSON.parse(localStorage.getItem("cart"));
 
     if(cart_list.length <= 1){
@@ -59,8 +60,8 @@ function delete_cart(code){
     }else{
         $.each(cart_list, function( index, value ) {
             if(value[0]==code){
-                alert("Delete"+index);
-                cart_list.splice(index+1,1);
+
+                cart_list.splice(1,index+1);
                 return false;
             }
         })

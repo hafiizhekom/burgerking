@@ -36,7 +36,6 @@
                                     <div class="form-group">
                                         <input type="number" class="form-control" min="0" placeholder="Harga Terendah" id="highest-price-form">
                                     </div>
-                                    <button class="btn btn-md btn-block btn-primary">Search</button>
                                 </div>
 
 

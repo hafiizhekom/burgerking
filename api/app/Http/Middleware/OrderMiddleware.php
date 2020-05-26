@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Illuminate\Support\Facades\Validator;
 use Closure;
 
-class CategoryMiddleware
+class OrderMiddleware
 {
     /**
      * Handle an incoming request.
@@ -18,8 +18,11 @@ class CategoryMiddleware
     {
 
         $validator = Validator::make($request->all(), [
-            'code' => 'required|string|unique:product_categories|max:6',
-            'name'=>'required|string|max:50'
+            'type'=>'required|string|max:10',
+            'location'=>'string|max:10',
+            'address' => 'string|max:100',
+            'phone' => 'string|max:15',
+            'note' => 'string'
         ]);
 
         if ($validator->fails()) {

@@ -55,6 +55,8 @@ Route::get('/order', function () {
 
 
 
+
+
 Route::get('/admin', function () {
     return view('admin/login');
 });
@@ -84,7 +86,9 @@ Route::get('/admin/store', function () {
 });
 
 
-
+Route::get('/admin/order', function () {
+    return view('admin/order');
+});
 
 
 

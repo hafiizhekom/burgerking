@@ -16,17 +16,17 @@
                     <div class="collapse navbar-collapse nav-left" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                            <a class="nav-link" href="#">ORDER</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href="#">RESTAURANTS</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href="offers">OFFERS</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="trending">TRENDING</a>
-                            </li>
+                                <a class="nav-link" href="#" id="order-nav-button">ORDER</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="restaurant">RESTAURANTS</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="offers">OFFERS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="trending">TRENDING</a>
+                                </li>
                             <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 MORE
@@ -55,9 +55,16 @@
 
 
                         <div class="nav-right">
-                            <div class="btn btn-sm btn-primary mr-3">SIGN UP</div>
-                            <div class="btn btn-sm btn-primary">SIGN UP</div>
+                            <div class="btn btn-sm btn-link text-dark font-weight-bold" id="recentorder-nav-button">RECENT ORDER</div>
+                            <a class="btn btn-sm btn-primary-reverse mr-3" id="signup-nav-button" href="/signup">
+                                <span >SIGN UP</span>
+                            </a>
+                            <a class="btn btn-sm btn-primary-reverse mr-3" id="profile-nav-button" href="/account">
+                                <i class="fas fa-user"  style="font-size:20px;"></i>
+                            </a>
+                            <a class="btn btn-sm btn-primary-reverse" href="cart">$ <span class="price-tag">0</span> <i class="fas fa-shopping-bag"></i></a>
                         </div>
+
 
                   </nav>
 
@@ -210,10 +217,68 @@
                         </div>
                     </div>
                 </section>
+
+                <div class="modal" tabindex="-1" role="dialog" id="order-modal">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">WHAT TYPE OF ORDER WILL THIS BE?</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="hidden" name="product-modal">
+                            <input type="hidden" name="price-modal">
+                            <input type="hidden" name="nameproduct-modal">
+                           <div class="row">
+                                <div class="col-6">
+                                    <button class="btn btn-lg btn-primary btn-block" id="delivery-button-modal">DELIVERY</button>
+                                </div>
+
+                                <div class="col-6">
+                                    <a class="btn btn-lg btn-primary-reverse btn-block" href="restaurant"">AT RESTAURANT</a>
+                                </div>
+                           </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="modal" tabindex="-1" role="dialog" id="delivery-modal">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">ENTER YOU DELIVERY ADDRESS</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Address" name="address" id="address-modal">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Phone" name="phone" id="phone-modal" onkeyup="numOnly(this)" onblur="numOnly(this)">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Delivery Instrution" name="instruction" id="instruction-modal">
+                            </div>
+                            <button class="btn btn-lg btn-block btn-primary" id="delivery-here-button-modal" disabled>DELIVERY HERE</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
         </div>
+        <script src="<?=asset("asset/js/admin/env.js");?>"></script>
+        <script src="<?=asset("asset/js/check-login.js");?>"></script>
+        <script src="<?=asset("asset/js/logout.js");?>"></script>
+        <script src="<?=asset("asset/js/navigation.js");?>"></script>
+        <script src="<?=asset("asset/js/cart.js");?>"></script>
         <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
         <script src="asset/js/fetching-home.js"></script>
         <script src="asset/js/navbar.js"></script>
+        <script src="<?=asset("vendor/font-awesome/js/all.js");?>"></script>
     </body>
 
 </html>

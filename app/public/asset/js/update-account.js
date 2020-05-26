@@ -21,13 +21,13 @@ $("#view-user").submit(function(e) {
            success: function(data)
            {
                if(data.status){
-                    $("input[name=email]").val(data.data.email);
+                    $("#email-account-info").val(data.data.email);
                     $("input[name=name]").val(data.data.name);
                     $("input[name=phone]").val(data.data.phone);
-                    $("input[name=birthday]").val(data.data.birthday);
+                    $("#birthday-account-info").val(data.data.birthday);
                     $("input[name=id]").val(data.data.id);
-                    load_data();
-                    alert(data.message);
+
+
                }else{
                    alert(data.message);
                }

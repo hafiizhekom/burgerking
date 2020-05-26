@@ -60,6 +60,6 @@ function selectstore(store){
         window.location.replace("order");
     }else{
         alert("Please pick a offer");
-        window.location.replace("cart");
+        window.location.replace("offers");
     }
 }

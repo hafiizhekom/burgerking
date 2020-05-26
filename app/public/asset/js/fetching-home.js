@@ -16,7 +16,6 @@ function load_product(){
                             "<div class='card-body'>"+
                             "<h5 class='card-title'>$"+value['price']+" "+value['name']+"</h5>"+
                             "<p class='card-text'>"+value['description']+"</p>"+
-                            "<a href='#' class='btn btn-link'>SIGN IN TO REDEEM</a>" +
                             "</div>" +
                         "</div>" +
                     "</div>");

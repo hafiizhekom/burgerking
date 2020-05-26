@@ -16,18 +16,18 @@
 
                     <div class="collapse navbar-collapse nav-left" id="navbarSupportedContent">
                         <ul class="navbar-nav">
-                            <li class="nav-item">
-                            <a class="nav-link" href="#" id="order-nav-button">ORDER</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href="restaurant">RESTAURANTS</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href="offers">OFFERS</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="trending">TRENDING</a>
-                            </li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="#" id="order-nav-button">ORDER</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="restaurant">RESTAURANTS</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="offers">OFFERS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="trending">TRENDING</a>
+                                </li>
                             <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 MORE
@@ -57,9 +57,9 @@
 
                         <div class="nav-right">
                             <div class="btn btn-sm btn-link text-dark font-weight-bold" id="recentorder-nav-button">RECENT ORDER</div>
-                            <div class="btn btn-sm btn-primary-reverse mr-3" id="signup-nav-button">
+                            <a class="btn btn-sm btn-primary-reverse mr-3" id="signup-nav-button" href="/signup">
                                 <span >SIGN UP</span>
-                            </div>
+                            </a>
                             <a class="btn btn-sm btn-primary-reverse mr-3" id="profile-nav-button" href="/account">
                                 <i class="fas fa-user"  style="font-size:20px;"></i>
                             </a>

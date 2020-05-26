@@ -51,5 +51,10 @@ $("#delivery-here-button-modal").click(function(){
     localStorage.setItem("location-address",$("#address-modal").val())
     localStorage.setItem("location-phone",$("#phone-modal").val())
     localStorage.setItem("location-instruction",$("#instruction-modal").val())
-    window.location.replace("order");
+
+    if(localStorage.hasOwnProperty('cart')){
+        window.location.replace("order");
+    }else{
+        window.location.replace("offers");
+    }
 })

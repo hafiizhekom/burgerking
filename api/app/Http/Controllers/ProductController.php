@@ -87,7 +87,9 @@ class ProductController extends Controller
             $data = Product::where('active','Y');
         }
 
+
         if($lowest_price != "" && $highest_price != ""){
+
             $data = $data->whereBetween('price', [$lowest_price, $highest_price]);
         }
 

@@ -9,7 +9,7 @@
                                 <h2>ACCOUNT</h2>
                                 <form id="update-user" class="mt-3">
                                     <div class="form-group">
-                                        <input class="form-control" type="text" placeholder="Email"  disabled required>
+                                        <input class="form-control" type="text" placeholder="Email"   id="email-account-info" disabled required>
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control" type="text" placeholder="Name" name="name" required>
@@ -18,7 +18,7 @@
                                         <input class="form-control" type="text" placeholder="Phone" name="phone" onkeyup="numOnly(this)" onblur="numOnly(this)" required>
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" type="date" placeholder="Birthday" disabled required>
+                                        <input class="form-control" type="date" placeholder="Birthday" id="birthday-account-info" disabled required>
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control" type="password" placeholder="Password" name="password" onkeyup="checkPassword()">
