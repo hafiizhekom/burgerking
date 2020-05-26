@@ -20,7 +20,7 @@ $("#add-article").submit(function(e) {
 
     $.ajax({
            type: "POST",
-           url: "http://localhost:5000/article/store",
+           url: api+"article/store",
            data: formData, // serializes the form's elements.
            processData: false,
            contentType: false,

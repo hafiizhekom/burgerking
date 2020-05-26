@@ -18,7 +18,7 @@ class StoreMiddleware
     {
 
         $validator = Validator::make($request->all(), [
-            'code' => 'required|string|max:6',
+            'code' => 'required|string|unique:stores|max:6',
             'name' => 'required|string|max:50',
             'address' => 'required|string|max:100',
             'phone'=>'required|string|max:15',

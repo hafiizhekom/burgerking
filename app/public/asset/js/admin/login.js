@@ -15,12 +15,9 @@ function login(){
             if(data.status){
                 alert(data.message);
                 localStorage.setItem('token', data.token);
-                token = data.token;
-                login = true;
                 window.location.replace("admin/dashboard");
             }else{
                 alert(data.message);
-                login = false;
             }
 
         }

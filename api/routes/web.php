@@ -34,7 +34,6 @@ $router->get('category', 'CategoryController@show');
 
 $router->get('store', 'StoreController@show');
 
-
 $router->group(['middleware' => ['authadmin']], function () use ($router) {
     $router->get('admin', 'AdministratorController@show');
     $router->get('admin/me', [
@@ -96,15 +95,30 @@ $router->group(['middleware' => ['authadmin']], function () use ($router) {
 
 });
 
+$router->group(['middleware' => ['auth']], function () use ($router) {
+    $router->get('user/current', 'UserController@showCurrent');
+    $router->post('user/change', [
+        'middleware' => 'userchange',
+        'uses' => 'UserController@change'
+    ]);
+});
 
 $router->post('auth/admin', [
     'middleware' => 'adminlogin',
     'uses' => 'AuthController@loginAdmin'
 ]);
 
-
-$router->post('category/store', [
-    'middleware' => 'category',
-    'uses' => 'CategoryController@store'
+$router->post('auth/register/user', [
+    'middleware' => 'register',
+    'uses' => 'AuthController@register'
 ]);
+
+$router->post('auth/user', [
+    'middleware' => 'login',
+    'uses' => 'AuthController@login'
+]);
+
+
+
+
 

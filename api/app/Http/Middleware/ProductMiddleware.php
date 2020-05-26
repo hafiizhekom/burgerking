@@ -18,7 +18,7 @@ class ProductMiddleware
     {
 
         $validator = Validator::make($request->all(), [
-            'code' => 'required|string|max:10',
+            'code' => 'required|string|unique:products|max:10',
             'name' => 'required|string|max:100',
             'description' => 'required|string',
             'price'=>'required|integer',

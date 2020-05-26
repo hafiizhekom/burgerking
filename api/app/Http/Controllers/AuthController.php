@@ -56,13 +56,11 @@ class AuthController extends Controller
 
         $user = new User;
 
-        $user->nama_lengkap = $this->request->nama_lengkap;
+        $user->name = $this->request->name;
         $user->email = $this->request->email;
+        $user->phone = $this->request->phone;
+        $user->birthday = $this->request->birthday;
         $user->password = md5($this->request->password);
-        // $user->id_jenis_kelamin = $this->request->id_jenis_kelamin;
-        // $user->tanggal_lahir = $this->request->tanggal_lahir;
-        // $user->no_handphone = $this->request->no_handphone;
-        // $user->alamat = $this->request->alamat;
 
         if($user->save()){
             return response()->json(['status'=>true, 'message'=>"Success Register"], 200);

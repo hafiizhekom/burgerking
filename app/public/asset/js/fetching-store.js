@@ -11,7 +11,7 @@ function load_restaurant(){
         success : function(data) {
             $.each( data.data, function( key, value ) {
 
-                longlat.push([value["latitude"], value["longitude"], value["name"]]);
+                longlat.push([value["latitude"], value["longitude"], value["name"], value["code"]]);
                 setMarker({lat: parseFloat(value["latitude"]), lng:  parseFloat(value["longitude"])}, value['name']);
 
             });

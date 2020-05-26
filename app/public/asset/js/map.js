@@ -78,12 +78,13 @@
            // Close the current InfoWindow.
            infoWindow.close();
 
+
+
            // Create a new InfoWindow.
            infoWindow = new google.maps.InfoWindow({position: mapsMouseEvent.latLng});
            infoWindow.setContent(mapsMouseEvent.latLng.toString());
            infoWindow.open(map);
-           document.getElementById('longitude').value = mapsMouseEvent.latLng.toString().split(",")[1].replace(")", "");
-           document.getElementById('latitude').value = mapsMouseEvent.latLng.toString().split(",")[0].replace("(", "");
+            pickmap(mapsMouseEvent.latLng.toString().split(",")[0].replace("(", ""), mapsMouseEvent.latLng.toString().split(",")[1].replace(")", ""))
            });
 
 
@@ -98,3 +99,11 @@
                map: map
            });
        }
+
+       function pickmap(lat,long){
+           currLat = lat;
+           currLong = long;
+           nearby();
+       }
+
+

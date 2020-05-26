@@ -12,7 +12,7 @@ $("#edit-product").submit(function(e) {
 
     $.ajax({
            type: "POST",
-           url: "http://localhost:5000/product/change",
+           url: api+"product/change",
            data: formData, // serializes the form's elements.
            processData: false,
            contentType : false,

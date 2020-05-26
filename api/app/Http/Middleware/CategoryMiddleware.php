@@ -18,7 +18,7 @@ class CategoryMiddleware
     {
 
         $validator = Validator::make($request->all(), [
-            'code' => 'required|string|max:6',
+            'code' => 'required|string|unique:categories|max:6',
             'name'=>'required|string|max:50'
         ]);
 

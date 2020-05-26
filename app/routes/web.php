@@ -33,6 +33,27 @@ Route::get('/signup', function () {
     return view('signup');
 });
 
+Route::get('/signin', function () {
+    return view('signin');
+});
+
+Route::get('/account', function () {
+    return view('account');
+});
+
+Route::get('/account/info', function () {
+    return view('account-info');
+});
+
+Route::get('/cart', function () {
+    return view('cart');
+});
+
+Route::get('/order', function () {
+    return view('order');
+});
+
+
 
 Route::get('/admin', function () {
     return view('admin/login');
@@ -61,6 +82,7 @@ Route::get('/admin/article', function () {
 Route::get('/admin/store', function () {
     return view('admin/store');
 });
+
 
 
 

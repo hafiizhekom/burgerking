@@ -75,6 +75,23 @@ function search(){
     var keyword = $input.val();
     var lowest_price = $("#lowest-price-form").val();
     var highest_price = $("#highest-price-form").val();
+    var datasubmit = {};
+
+    if(keyword){
+        datasubmit['keyword'] = keyword;
+    }
+
+    if(lowest_price){
+        datasubmit['lowest_price'] = lowest_price;
+    }
+
+    if(highest_price){
+        datasubmit['highest_price'] = highest_price;
+    }
+
+    if(sort){
+        datasubmit['sort'] = sort;
+    }
 
 
 
@@ -82,13 +99,7 @@ function search(){
     $.ajax({
         type : 'GET',
         url : 'http://localhost:5000/product/search/'+category,
-        data : {
-            'keyword' : keyword,
-            'lowestprice' : lowest_price,
-            'highestprice' : highest_price,
-            'sort' : sort
-
-        },
+        data : datasubmit,
         success : function(data) {
             console.log(data.data);
             if(data.data.length){
@@ -96,12 +107,11 @@ function search(){
                 $.each( data.data, function( key, value ) {
                     console.log( key + ": " + value['code'] );
                     $("#offers-list").append("<div class='col-lg-4 col-md-4 col-sm-6 mt-4'>"+
-                            "<div class='card' >"+
+                            "<div class='card thumbnail-product' data-product='"+value['code']+"' data-price='"+value['price']+"' data-name='"+value['name']+"'>"+
                                 "<img class='card-img-top' src='"+value['image']+"' alt='Card image cap'>"+
                                 "<div class='card-body'>"+
                                 "<h5 class='card-title'>$"+value['price']+" "+value['name']+"</h5>"+
                                 "<p class='card-text'>"+value['description']+"</p>"+
-                                "<a href='#' class='btn btn-link'>SIGN IN TO REDEEM</a>" +
                                 "</div>" +
                             "</div>" +
                         "</div>");

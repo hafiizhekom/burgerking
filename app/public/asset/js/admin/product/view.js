@@ -6,7 +6,7 @@ $(window).ready(function(){
 function load_data(){
     $.ajax({
         type : 'GET',
-        url : 'http://localhost:5000/product/all',
+        url : api+'product/all',
         success : function(data) {
             $('#product-table').bootstrapTable("destroy");
             $('#product-table').bootstrapTable({
@@ -21,7 +21,7 @@ function load_data(){
 function load_category(){
     $.ajax({
         type : 'GET',
-        url : 'http://localhost:5000/category',
+        url : api+'category',
         success : function(data) {
                 $.each( data.data, function( key, value ) {
                 $(".category-list").append("<option value='"+value['id']+"'>"+value['name']+"</option>");

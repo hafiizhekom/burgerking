@@ -12,7 +12,7 @@ $("#delete-store").submit(function(e) {
 
     $.ajax({
            type: "POST",
-           url: "http://localhost:5000/store/delete",
+           url: api+"store/delete",
            data: formData, // serializes the form's elements.
            processData: false,
            contentType: false,

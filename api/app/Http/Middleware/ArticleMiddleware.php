@@ -18,7 +18,7 @@ class ArticleMiddleware
     {
 
         $validator = Validator::make($request->all(), [
-            'code' => 'required|string|max:30',
+            'code' => 'required|string|unique:articles|max:30',
             'title' => 'required|string|max:50',
             'content' => 'required|string',
             'image'=>'required|image',

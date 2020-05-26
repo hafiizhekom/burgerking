@@ -6,7 +6,7 @@ $(window).ready(function(){
 function load_data(){
     $.ajax({
         type : 'GET',
-        url : 'http://localhost:5000/article/all',
+        url : api+'article/all',
         success : function(data) {
             $('#article-table').bootstrapTable("destroy");
             $('#article-table').bootstrapTable({

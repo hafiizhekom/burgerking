@@ -28,7 +28,7 @@ $("#add-store").submit(function(e) {
 
     $.ajax({
            type: "POST",
-           url: "http://localhost:5000/store/store",
+           url: api+"store/store",
            data: formData, // serializes the form's elements.
            processData: false,
            contentType: false,

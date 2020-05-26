@@ -129,6 +129,14 @@ h1, h2, h3, h4, h5, h6{
     font-weight: bold;
 }
 
+.btn-primary-reverse{
+    background:transparent;
+    color:rgb(180, 97, 27);
+    border: 2px solid rgb(180, 97, 27);
+    border-radius: 30px;
+    font-weight: bold;
+}
+
 .btn-primary:hover{
     background:rgb(180, 97, 27);
     border: 2px solid #fff;
@@ -152,4 +160,22 @@ a{
 
 .list-group-item{
     cursor: pointer;
+}
+
+.bg-default{
+    background-color:#F4F5F5;
+}
+
+.btn-primary:disabled{
+    background-color:#FAAE17;
+    border:1px solid #fff;
+    cursor:not-allowed;
+}
+
+.bg-default{
+    background: #F4F1EF;
+}
+
+.back-content{
+    padding-top:100px;
 }

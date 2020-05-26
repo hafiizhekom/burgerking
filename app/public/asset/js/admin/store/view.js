@@ -6,7 +6,7 @@ $(window).ready(function(){
 function load_data(){
     $.ajax({
         type : 'GET',
-        url : 'http://localhost:5000/store',
+        url : api+'store',
         success : function(data) {
             $('#store-table').bootstrapTable("destroy");
             $('#store-table').bootstrapTable({
